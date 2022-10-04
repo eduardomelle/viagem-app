@@ -1,25 +1,18 @@
 package br.com.eduardomelle.cliente;
 
-public class Cliente {
+import java.io.Serializable;
 
-  private long id;
+public class Cliente implements Serializable {
+
+  private Long id;
 
   private String nome;
 
-  private Cliente(long id, String nome) {
-    this.id = id;
-    this.nome = nome;
-  }
-
-  public static Cliente of(long id, String nome) {
-    return new Cliente(id, nome);
-  }
-
-  public long getId() {
+  public Long getId() {
     return id;
   }
 
-  public void setId(long id) {
+  public void setId(Long id) {
     this.id = id;
   }
 
