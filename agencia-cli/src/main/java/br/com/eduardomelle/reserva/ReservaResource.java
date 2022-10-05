@@ -9,9 +9,14 @@ import javax.ws.rs.core.Response.Status;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 
 import br.com.eduardomelle.cliente.Cliente;
+import br.com.eduardomelle.cliente.ClienteService;
 
 @Path("/reserva-cli")
 public class ReservaResource {
+
+  @Inject
+  @RestClient
+  private ClienteService clienteService;
 
   @Inject
   @RestClient
@@ -20,8 +25,7 @@ public class ReservaResource {
   @GET
   @Path("/newReserva")
   public Response newReserva() {
-    Cliente cliente = new Cliente();
-    cliente.setId(1L);
+    Cliente cliente = this.clienteService.findById(1L);
 
     Reserva reserva = new Reserva();
     reserva.setCliente(cliente);
