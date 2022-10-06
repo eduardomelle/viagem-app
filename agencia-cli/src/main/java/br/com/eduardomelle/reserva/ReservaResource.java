@@ -25,10 +25,13 @@ public class ReservaResource {
   @GET
   @Path("/newReserva")
   public Response newReserva() {
-    Cliente cliente = this.clienteService.findById(1L);
+    Long idCliente = 1L;
+
+    // Cliente cliente = this.clienteService.findById(idCliente);
 
     Reserva reserva = new Reserva();
-    reserva.setCliente(cliente);
+    // reserva.setIdCliente(cliente.getId());
+    reserva.setIdCliente(idCliente);
 
     Reserva r = this.reservaService.newReserva(reserva);
 

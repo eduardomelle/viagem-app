@@ -26,14 +26,14 @@ public class ClienteResource {
   @GET
   @Path("/findById")
   @Produces(MediaType.APPLICATION_JSON)
-  public Cliente findById(@QueryParam("id") long id) {
+  public Cliente findById(@QueryParam("id") Long id) {
     return Cliente.findById(id);
   }
 
   @Transactional
   @DELETE
   @Path("/deleteById")
-  public void deleteById(@QueryParam("id") long id) {
+  public void deleteById(@QueryParam("id") Long id) {
     Cliente.deleteById(id);
   }
 

@@ -2,18 +2,16 @@ package br.com.eduardomelle.reserva;
 
 import java.io.Serializable;
 
-import br.com.eduardomelle.cliente.Cliente;
-
 public class Reserva implements Serializable {
 
-  private Cliente cliente;
+  private Long idCliente;
 
-  public Cliente getCliente() {
-    return cliente;
+  public Long getIdCliente() {
+    return idCliente;
   }
 
-  public void setCliente(Cliente cliente) {
-    this.cliente = cliente;
+  public void setIdCliente(Long idCliente) {
+    this.idCliente = idCliente;
   }
 
 }
