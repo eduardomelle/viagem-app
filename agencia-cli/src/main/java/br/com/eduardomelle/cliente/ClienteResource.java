@@ -29,4 +29,12 @@ public class ClienteResource {
     return Response.status(Status.CREATED).entity(c).build();
   }
 
+  @GET
+  @Path("/findById")
+  @Produces(MediaType.APPLICATION_JSON)
+  public Response findById() {
+    Cliente cliente = this.clienteService.findById(1L);
+    return Response.ok(cliente).build();
+  }
+
 }

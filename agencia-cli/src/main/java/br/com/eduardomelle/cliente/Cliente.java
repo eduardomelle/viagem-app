@@ -8,6 +8,13 @@ public class Cliente implements Serializable {
 
   private String nome;
 
+  public static Cliente of(Long id, String nome) {
+    Cliente cliente = new Cliente();
+    cliente.setId(id);
+    cliente.setNome(nome);
+    return cliente;
+  }
+
   public Long getId() {
     return id;
   }

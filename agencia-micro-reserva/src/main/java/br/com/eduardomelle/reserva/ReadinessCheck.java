@@ -1,4 +1,4 @@
-package br.com.eduardomelle.cliente;
+package br.com.eduardomelle.reserva;
 
 import org.eclipse.microprofile.health.HealthCheck;
 import org.eclipse.microprofile.health.HealthCheckResponse;
@@ -9,7 +9,7 @@ public class ReadinessCheck implements HealthCheck {
 
   @Override
   public HealthCheckResponse call() {
-    if (Cliente.listAll() == null) {
+    if (Reserva.listAll() == null) {
       return HealthCheckResponse.down("I'm not ready");
     }
 
