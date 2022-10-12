@@ -10,6 +10,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
+import org.eclipse.microprofile.faulttolerance.CircuitBreaker;
 import org.eclipse.microprofile.faulttolerance.Fallback;
 import org.eclipse.microprofile.faulttolerance.Timeout;
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
@@ -27,6 +28,7 @@ public interface ClienteService {
   @Produces(MediaType.APPLICATION_JSON)
   @Timeout(unit = ChronoUnit.SECONDS, value = 3)
   @Fallback(fallbackMethod = "fallback")
+  @CircuitBreaker(requestVolumeThreshold = 6, failureRatio = 0.5, delay = 6000, successThreshold = 1)
   Cliente findById(@QueryParam("id") long id);
 
   private Cliente fallback(long id) {
