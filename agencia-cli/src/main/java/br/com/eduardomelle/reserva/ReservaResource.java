@@ -27,11 +27,10 @@ public class ReservaResource {
   public Response newReserva() {
     Long idCliente = 1L;
 
-    // Cliente cliente = this.clienteService.findById(idCliente);
+    Cliente cliente = this.clienteService.findById(idCliente);
 
     Reserva reserva = new Reserva();
-    // reserva.setIdCliente(cliente.getId());
-    reserva.setIdCliente(idCliente);
+    reserva.setIdCliente(cliente.getId());
 
     Reserva r = this.reservaService.newReserva(reserva);
 
