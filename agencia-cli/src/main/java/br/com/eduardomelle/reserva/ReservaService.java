@@ -8,7 +8,7 @@ import javax.ws.rs.core.MediaType;
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
 // @RegisterRestClient(baseUri = "http://localhost:8182/reserva")
-@RegisterRestClient(baseUri = "http://reserva-eduardomelle-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com/reserva")
+@RegisterRestClient(baseUri = "http://agencia-micro-reserva-eduardomelle-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com/reserva")
 public interface ReservaService {
 
   @POST
